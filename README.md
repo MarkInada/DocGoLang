@@ -1,2 +1,1 @@
-# DocGoLang
-How to use go language
+https://markinada.github.io/DocGoLang/
