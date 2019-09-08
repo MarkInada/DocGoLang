@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sphinx+Eclipse環境構築メモ &mdash; DocSphinxHowTo 1.0 documentation</title>
+  <title>Golang環境構築メモ &mdash; DocSphinxHowTo 1.0 documentation</title>
   
 
   
@@ -17,33 +17,34 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/my_theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to DocSphinxHowTo’s documentation!" href="index.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+    <link rel="prev" title="Welcome to GoLang’s documentation!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -79,32 +80,50 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Sphinx+Eclipse環境構築メモ</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">はじめに</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#python">1. Pythonのインストール</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sphinx">2. Sphinxのインストール</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#eclipse">3. Eclipseのインストール</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">4. Eclipseの設定</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#rest-editor">4-1. ReST Editor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pydev">4-2. PyDev</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">4-3. Pythonライブラリロード</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Golang環境構築メモ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">はじめに</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1. 事前準備</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#go">2. Go言語とは</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3. なぜGo言語で開発するのか</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#web">4. Webアプリケーションとは何か？</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Webアプリケーションがやっていること</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Webアプリケーションまとめ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#buildhtml">5. Buildしてhtml生成</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">5-1. Sphinxプロジェクトの読み込み</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">5-2. ビルド設定</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">5-3. ビルドしてみる</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#http">5. HTTP入門</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">HTTPリクエスト行構成</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">リクエストメソッド</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">6. おすすめの設定</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#blockdiag">6-1. blockdiag</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sphinx-rtd-theme">6-2. sphinx_rtd_theme</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pc">6-3. PC画面用に横幅をカスタマイズ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">6. Webアプリケーションの歴史</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">7. ドキュメントを書いてみる</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#github">8. GitHubで作成したドキュメントを公開</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">引用した資料たち</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">1. Golangのインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hello-world">2. Hello Worldを表示する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ghq">3. ghqを使ってリポジトリの取得と管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zshpeco">4. zshを導入し、pecoでリポジトリ間の移動</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">5. エディタと開発環境</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">エディター</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">コードフォーマッター</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">静的解析ツール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">ドキュメント閲覧ツール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">その他のツール</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">6. Goをはじめる</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id17">チュートリアル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-tour-of-gogo">A Tour of Goで学ぶGoコードの基本</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id18">6. Golangプロジェクトを始める</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id19">プロジェクトを作るまたは読み込み前の基礎的注意点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">テキトーなプロジェクトを読み込んでみる</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vendoringglide">依存管理 (vendoringとglide)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id21">その他,補足</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id22">用いた専門用語たち</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id23">引用した資料たち</a></li>
 </ul>
 </li>
 </ul>
@@ -152,7 +171,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Sphinx+Eclipse環境構築メモ</li>
+      <li>Golang環境構築メモ</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -171,196 +190,488 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sphinx-eclipse">
-<h1>Sphinx+Eclipse環境構築メモ<a class="headerlink" href="#sphinx-eclipse" title="Permalink to this headline">¶</a></h1>
-<p>Sphinx+Eclipse環境で快適なドキュメントワークを実現する。</p>
+  <div class="section" id="golang">
+<h1>Golang環境構築メモ<a class="headerlink" href="#golang" title="Permalink to this headline">¶</a></h1>
+<p>Golang環境を構築し理解する</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">作成日:</th><td class="field-body">2018/07/17</td>
+<tr class="field-odd field"><th class="field-name">作成日:</th><td class="field-body">2019/09/07</td>
 </tr>
 </tbody>
 </table>
 <div class="section" id="id1">
 <h2>はじめに<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Windows 7 64bit環境にて作業を行うが、LinuxでもMacでもそんなに変わらないはず。</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">以下、手順概要:</th><td class="field-body"></td>
-</tr>
-</tbody>
-</table>
-<div><img height="120" src="_images/blockdiag-de9f2c511e450285425799f0807a2004e2fa9897.png" width="1024" /></div></div>
-<div class="section" id="python">
-<h2>1. Pythonのインストール<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
-<p>Sphinxをインストールする前にPythonのインストールが必要。すでにインストール済みの場合は作業の必要なし。
-公式のPythonインストーラを使うより、Pythonディストリビューションの”Anaconda”を使うことをおすすめする。
-Anacondaだとデータサイエンス系に必要なライブラリもまとめてインストールすることが可能。
-後になってAnacondaにしておけば！となったときに面倒なため最初からAnacondaにする。
-とにかく、AnacondaでPython環境を入れよう。<a class="reference external" href="https://www.anaconda.com/download/#windows">https://www.anaconda.com/download/#windows</a></p>
-<p>★注意！：Anacondaをインストールするとき、PATH(環境変数)を自動的に追加するチェックボックスは忘れなくチェックしておく。その他はデフォルトのままで問題ない。</p>
-<p>インストールが完了したら、pythonがちゃんとインスコされているかバージョンを確認してみる。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$python</span> -V
-Python <span class="m">3</span>.6.5 :: Anaconda, Inc.
-</pre></div>
-</div>
-</div>
-<div class="section" id="sphinx">
-<h2>2. Sphinxのインストール<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h2>
-<p>Pythonがインストールできたら、次はSphinxをインストールする。Pythonのpipコマンドでインストール。
-環境変数にはAnacondaインスコ時に自動的に追加されているはずなので、コマンドプロンプトに直接入力。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$pip</span> install sphinx Pillow
-</pre></div>
-</div>
-<p>ちゃんとインストール完了できたかバージョンを見てみる。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$sphinx</span>-quickstart --version
-sphinx-quickstart <span class="m">1</span>.7.4
-</pre></div>
-</div>
-<p>では早速ドキュメントのプロジェクトを作ってみる。quickstartの詳細説明(<a class="reference external" href="http://sphinx-users.jp/gettingstarted/sphinxquickstart.html">http://sphinx-users.jp/gettingstarted/sphinxquickstart.html</a>)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$sphinx</span>-quickstart %USERPROFILE%<span class="se">\S</span>phinxProjects<span class="se">\S</span>ampleDoc
-</pre></div>
-</div>
-<a class="reference internal image-reference" href="_images/quickstart1.png"><img alt="_images/quickstart1.png" class="align-center" src="_images/quickstart1.png" style="width: 684.0px; height: 160.0px;" /></a>
-<a class="reference internal image-reference" href="_images/quickstart2.png"><img alt="_images/quickstart2.png" class="align-center" src="_images/quickstart2.png" style="width: 487.0px; height: 32.0px;" /></a>
-<p>上記実行すると色々と質問されるが、Project NameとAuthor Name以外はEnterキーでスキップしてOK。これでユーザープロファイル下にSphinxProjectsディレクトリをつくり、その中にプロジェクト”SampleDoc”の作成が完了。</p>
-<a class="reference internal image-reference" href="_images/Projects.png"><img alt="_images/Projects.png" class="align-center" src="_images/Projects.png" style="width: 634.0px; height: 253.0px;" /></a>
-</div>
-<div class="section" id="eclipse">
-<h2>3. Eclipseのインストール<a class="headerlink" href="#eclipse" title="Permalink to this headline">¶</a></h2>
-<p>この時点で、テキストエディタとコマンドプロンプトでSphinxのドキュメント作成を行うことは可能。
-しかし、もう少し我慢して一手間かけて統合開発環境 Eclipseで快適な環境にしよう。
-Eclipseのインストールして初期設定までは行おう⇒手順リンク(<a class="reference external" href="https://markinada.github.io/DocEclipseHowTo/">https://markinada.github.io/DocEclipseHowTo/</a>)</p>
-</div>
 <div class="section" id="id2">
-<h2>4. Eclipseの設定<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>まずは必要なプラグインが2つあるのでインストールする。</p>
-<div class="section" id="rest-editor">
-<h3>4-1. ReST Editor<a class="headerlink" href="#rest-editor" title="Permalink to this headline">¶</a></h3>
-<p>Help -&gt; Eclipse Marketplaceから”ReST Editor”を検索し、インストールする。</p>
-<a class="reference internal image-reference" href="_images/ReSTEditor.png"><img alt="_images/ReSTEditor.png" class="align-center" src="_images/ReSTEditor.png" style="width: 692.0px; height: 277.0px;" /></a>
+<h3>1. 事前準備<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>MacOS Mojave環境で実施。事前にHomebrewはインスコしておこう。</p>
 </div>
-<div class="section" id="pydev">
-<h3>4-2. PyDev<a class="headerlink" href="#pydev" title="Permalink to this headline">¶</a></h3>
-<p>Help -&gt; Eclipse Marketplaceから”PyDev”を検索し、インストールする。</p>
-<a class="reference internal image-reference" href="_images/PyDev.png"><img alt="_images/PyDev.png" class="align-center" src="_images/PyDev.png" style="width: 703.0px; height: 276.0px;" /></a>
+<div class="section" id="go">
+<h3>2. Go言語とは<a class="headerlink" href="#go" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>C言語の実行速度に近づけるという目標でデザインされた。</li>
+<li>Go言語はバックエンドシステムのプログラムを単純かつ効率的に書くために開発された。</li>
+<li>新しい言語だが、リリースされて以降、XaaSのプログラムを書くための言語として人気に。</li>
+<li>静的付け言語だが動的な型付けが可能</li>
+<li>関数プログラミングのものとか考えられている機能が多い</li>
+</ul>
 </div>
 <div class="section" id="id3">
-<h3>4-3. Pythonライブラリロード<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>インストールが終わったらPythonのライブラリをEclipseにロードさせる。Window -&gt; Preferences -&gt; PyDev -&gt; Interpreters -&gt; Python Interpreter。</p>
-<a class="reference internal image-reference" href="_images/PythonLoad.png"><img alt="_images/PythonLoad.png" class="align-center" src="_images/PythonLoad.png" style="width: 951.0px; height: 653.0px;" /></a>
+<h3>3. なぜGo言語で開発するのか<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>ネイティブコードにコンパイルされるのでインタプリタと比べた処理が早い。</li>
+<li>並列実行を標準でサポートしていて、高速に動作するサーバーサイドのプログラムが書ける</li>
+<li>OSスレッドに対して多数のゴールーチンを生成する※垂直スケーラビリティに優れている。</li>
+<li>Go Web アプリは動作依存性のない静的なバイナリとしてコンパイルされるので、Goが組み込まれていないシステムにも分散が可能なため※水平スケーラビリティにも優れている。</li>
+<li>モジュール性が高いため、小規模Goサービスを複数組み合わせて大規模アプリを作成することも可能</li>
+<li>gofmtによるフォーマットやgodocによる資料生成、gotestによるテストなど、コードベースの保守が容易。</li>
+</ul>
 </div>
-</div>
-<div class="section" id="buildhtml">
-<h2>5. Buildしてhtml生成<a class="headerlink" href="#buildhtml" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="web">
+<h3>4. Webアプリケーションとは何か？<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>クライアントのHTTPリクエストに応答し、HTTPレスポンスとしてクライアントにHTMLを送り返すプログラム。</li>
+<li>Webサーバーが行なっていること</li>
+<li>Webアプリケーション＝Webサーバー</li>
+<li>HTMLをただ表示する静的サイトやAdobe FlashはWebアプリではない。</li>
+</ul>
 <div class="section" id="id4">
-<h3>5-1. Sphinxプロジェクトの読み込み<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>File -&gt; New -&gt; Other から、以下のようにプロジェクトを読み込む</p>
-<a class="reference internal image-reference" href="_images/New1.png"><img alt="_images/New1.png" class="align-center" src="_images/New1.png" style="width: 515.0px; height: 495.0px;" /></a>
-<a class="reference internal image-reference" href="_images/New2.png"><img alt="_images/New2.png" class="align-center" src="_images/New2.png" style="width: 517.0px; height: 497.0px;" /></a>
-<a class="reference internal image-reference" href="_images/New3.png"><img alt="_images/New3.png" class="align-center" src="_images/New3.png" style="width: 520.0px; height: 498.0px;" /></a>
-<p>最後にconf.pyとindex.rstをsourceディレクトリ内に移動し、上書きする。
-※注意！！　すでにsourceディレクトリにconf.pyとindex.rstがある状態で読み込みをこれらが初期化されてしまいます！</p>
-<a class="reference internal image-reference" href="_images/ChangeSouce.png"><img alt="_images/ChangeSouce.png" class="align-center" src="_images/ChangeSouce.png" style="width: 366.0px; height: 190.0px;" /></a>
+<h4>Webアプリケーションがやっていること<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>HTTPを介し、HTTPリクエストメッセージの形でクライアントから入力を受け取る</li>
+<li>HTTPリクエストメッセージを処理し、必要な処理を行う</li>
+<li>HTMLを生成し、HTTPレスポンスメッセージを入れて返す。</li>
+</ol>
 </div>
 <div class="section" id="id5">
-<h3>5-2. ビルド設定<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>Run -&gt; Run Configurationsを開き、”Sphinx (via make file)”から”new configuration”を選択し、下記のように入力する。</p>
-<a class="reference internal image-reference" href="_images/RunConf.png"><img alt="_images/RunConf.png" class="align-center" src="_images/RunConf.png" style="width: 859.0px; height: 711.0px;" /></a>
-<p>環境変数をEclipseにロードさせてビルド設定は終了。コマンドプロンプトで”PATH”をテキストに書き出し、その内容をEnviornmentに追加する。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$path</span> &gt; %userprofile%<span class="se">\p</span>ath.txt
-</pre></div>
+<h4>Webアプリケーションまとめ<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>ハンドラとテンプレートエンジンから成り立つ。</li>
+<li>ハンドラはクライアントから送られてきたHTTPリクエストを受け付けて処理する。</li>
+<li>HTMLを生成するためにテンプレートエンジンを呼び出し、HTTPレスポンスに組み込んでクライアントへ返送する。</li>
+</ul>
 </div>
-<a class="reference internal image-reference" href="_images/RunConfPath.png"><img alt="_images/RunConfPath.png" class="align-center" src="_images/RunConfPath.png" style="width: 846.0px; height: 578.0px;" /></a>
 </div>
+<div class="section" id="http">
+<h3>5. HTTP入門<a class="headerlink" href="#http" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>HTTPはWorld Wide Web (WWW)を支える力。</li>
+<li>1990年に定義されてから3回しか更新されておらず、現在のバージョンはHTTP/2</li>
+<li>HTTPの要求と応答の１回のやりとりで完結し、他のやりとりと紐づかない</li>
+<li>テキストベースのリクエスト/レスポンス型プロトコル。(2台のパソコンがリクエスト/レスポンスで会話するイメージ。)</li>
+<li>クライアント/サーバ型のコンピュータモデルで使用される</li>
+</ul>
 <div class="section" id="id6">
-<h3>5-3. ビルドしてみる<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<p>これで作業完了。実際にビルドしてみる。</p>
-<a class="reference internal image-reference" href="_images/Run.png"><img alt="_images/Run.png" class="align-center" src="_images/Run.png" style="width: 600.0px; height: 362.0px;" /></a>
-<p>Consoleでビルドができたことを確認。</p>
-<a class="reference internal image-reference" href="_images/BuildFinished.png"><img alt="_images/BuildFinished.png" class="align-center" src="_images/BuildFinished.png" style="width: 436.0px; height: 367.0px;" /></a>
-<p>buildディレクトリ内のhtmlディレクトリ内に生成されたhtmlファイルが格納される。</p>
-<p>htmlのソースが表示されてしまう場合は、html上で右クリックし、Open withでWeb Browserから開こう。</p>
-<a class="reference internal image-reference" href="_images/Complete.png"><img alt="_images/Complete.png" class="align-center" src="_images/Complete.png" style="width: 566.0px; height: 427.0px;" /></a>
-</div>
+<h4>HTTPリクエスト行構成<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>リクエスト行 - リクエストメソッド＋URI＋HTTPバージョン</li>
+<li>リクエストヘッダ (0行以上)</li>
+<li>空行</li>
+<li>メッセージ本体</li>
+</ol>
 </div>
 <div class="section" id="id7">
-<h2>6. おすすめの設定<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="blockdiag">
-<h3>6-1. blockdiag<a class="headerlink" href="#blockdiag" title="Permalink to this headline">¶</a></h3>
-<p>シーケンス図やフローチャートがかけるようになる。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$pip</span> install sphinxcontrib.blockdiag blockdiag
-</pre></div>
-</div>
-<p>以下のようにconf.pyを編集して拡張子の追加とフォントの指定を行う。</p>
-<a class="reference internal image-reference" href="_images/Blockdiag.png"><img alt="_images/Blockdiag.png" class="align-center" src="_images/Blockdiag.png" style="width: 547.0px; height: 92.0px;" /></a>
-</div>
-<div class="section" id="sphinx-rtd-theme">
-<h3>6-2. sphinx_rtd_theme<a class="headerlink" href="#sphinx-rtd-theme" title="Permalink to this headline">¶</a></h3>
-<p>お勧めのテーマが”sphinx_rtd_theme”。見やすいので使ってみる。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$pip</span> install sphinx_rtd_theme
-</pre></div>
-</div>
-<p>以下のようにconf.pyを編集してテーマの変更を行う。</p>
-<a class="reference internal image-reference" href="_images/Theme.png"><img alt="_images/Theme.png" class="align-center" src="_images/Theme.png" style="width: 583.0px; height: 89.0px;" /></a>
-</div>
-<div class="section" id="pc">
-<h3>6-3. PC画面用に横幅をカスタマイズ<a class="headerlink" href="#pc" title="Permalink to this headline">¶</a></h3>
-<p>スマホ等でも見れるようにデフォルトでは横幅が固定されているが、PCでしか見ない資料ならば横幅固定を外したい場合はcss上書きする。
-以下の内容のcssファイルをプロジェクトのディレクトリ内（buildhtml_staticcssmy_theme.css）に作成する。</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">import</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&quot;theme.css&quot;</span><span class="o">)</span><span class="p">;</span>
-
-<span class="p">.</span><span class="nc">wy-nav-content</span> <span class="p">{</span>
-    <span class="k">max-width</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>そして、以下のようにcond.pyを編集する。</p>
-<a class="reference internal image-reference" href="_images/Confpy.png"><img alt="_images/Confpy.png" class="align-center" src="_images/Confpy.png" style="width: 578.0px; height: 109.0px;" /></a>
+<h4>リクエストメソッド<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>HTTP0.9にはメソッドはGET一種類しかなかった</li>
+<li>1.0でPOSTとHEADが追加</li>
+<li>1.1でPUT,DELETE,OPTIONS,TRACEが追加</li>
+<li>最新ではGETとHEAD以外は省略可能</li>
+<li>HTMLの範囲で指定できるリクエストはGETとPOSTのみ</li>
+</ul>
 </div>
 </div>
 <div class="section" id="id8">
-<h2>7. ドキュメントを書いてみる<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<p>まずは、Textファイルをsourceディレクトリ内に作成する。</p>
-<a class="reference internal image-reference" href="_images/NewFile.png"><img alt="_images/NewFile.png" class="align-center" src="_images/NewFile.png" style="width: 628.0px; height: 791.0px;" /></a>
-<a class="reference internal image-reference" href="_images/NewFile2.png"><img alt="_images/NewFile2.png" class="align-center" src="_images/NewFile2.png" style="width: 520.0px; height: 601.0px;" /></a>
-<p>作成したら以下のようにindexのTreeにファイルを追加する。</p>
-<a class="reference internal image-reference" href="_images/Hello2.png"><img alt="_images/Hello2.png" class="align-center" src="_images/Hello2.png" style="width: 604.0px; height: 351.0px;" /></a>
-<p>試しに以下のようなTextを書いてみる。</p>
-<a class="reference internal image-reference" href="_images/Hello1.png"><img alt="_images/Hello1.png" class="align-center" src="_images/Hello1.png" style="width: 374.0px; height: 404.0px;" /></a>
-<p>Run(ビルド)してhtmlファイルを開くと・・・・。</p>
-<a class="reference internal image-reference" href="_images/Done.png"><img alt="_images/Done.png" class="align-center" src="_images/Done.png" style="width: 1420.0px; height: 734.4000000000001px;" /></a>
-<p>これで作業終了。あとは コード書く⇒ビルド⇒htmlの確認 を繰り返してドキュメントを書いていく。</p>
-<p>htmlのソースが表示されてしまう場合は、html上で右クリックし、Open withでWeb Browserから開こう。</p>
-<p>もしReSTエディターで一部文字化けが発生する場合、Window-&gt;Prederences-&gt;General-&gt;Apearance-&gt;Colors and FontsでFontを変更する。</p>
-<a class="reference internal image-reference" href="_images/MSGosic.png"><img alt="_images/MSGosic.png" class="align-center" src="_images/MSGosic.png" style="width: 762.0px; height: 651.0px;" /></a>
+<h3>6. Webアプリケーションの歴史<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>初期段階・・・CGI (Common Gateway Interface)で送られてくるコンテンツが動的に生成される試み。</li>
+<li>次の試み・・・SSI (server-side includes)はHTMLに命令を含むことでコンテンツを生成。</li>
+<li>SSIの進化・・・HTMLにさらに複雑なPHP,ASP,JSPといったコードを埋め込めるようにになる。</li>
+</ul>
 </div>
-<div class="section" id="github">
-<h2>8. GitHubで作成したドキュメントを公開<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
-<p>GitHubの使い方はまたいつか詳しく説明しようと思う。
-とりあえず今回は公開の仕方のみ説明。</p>
-<p>実際に私が公開しているGitHubのページを使って説明する。リンク（<a class="reference external" href="https://github.com/MarkInada/DocSphinxHowTo">https://github.com/MarkInada/DocSphinxHowTo</a>）</p>
-<p>まずbuild/htmlディレクトリをコピーし、ディレクトリ名を”docs”にする。docs内に”.nojekyll”という中身のないファイルを作る。</p>
-<p>完了したらこのdocsディレクトリをリポジトリのプロジェクトルートにプッシュする。次にGitHubプロジェクトのSettingに行く。</p>
-<a class="reference internal image-reference" href="_images/GitHub1.png"><img alt="_images/GitHub1.png" class="align-center" src="_images/GitHub1.png" style="width: 995.0px; height: 624.0px;" /></a>
-<p>Sourceで master branch /docs folder を選択し、Saveすると docs/index.html が公開される。</p>
-<a class="reference internal image-reference" href="_images/GitHub2.png"><img alt="_images/GitHub2.png" class="align-center" src="_images/GitHub2.png" style="width: 764.0px; height: 405.0px;" /></a>
-<p>公開先のアドレスは、<a class="reference external" href="https:/">https:/</a>/[ユーザー名].github.io/[リポジトリ名]/</p>
-<p>README.md にURLを記載しておくと、以下のように表示され、便利である。</p>
-<a class="reference internal image-reference" href="_images/GitHub3.png"><img alt="_images/GitHub3.png" class="align-center" src="_images/GitHub3.png" style="width: 557.0px; height: 544.0px;" /></a>
 </div>
 <div class="section" id="id9">
-<h2>引用した資料たち<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
-<p>・Sphinxをはじめよう (<a class="reference external" href="http://sphinx-users.jp/gettingstarted/">http://sphinx-users.jp/gettingstarted/</a>)</p>
-<p>・Sphinx最初の一歩 (<a class="reference external" href="http://www.sphinx-doc.org/ja/1.7/tutorial.html#install-sphinx">http://www.sphinx-doc.org/ja/1.7/tutorial.html#install-sphinx</a>)</p>
-<p>・reStructured Text in Eclipse (<a class="reference external" href="https://www.slideshare.net/tcalmant/rest-editor-eclipse-demo-camp-grenoble-2011">https://www.slideshare.net/tcalmant/rest-editor-eclipse-demo-camp-grenoble-2011</a>)</p>
-<p>・Sphinx再入門 (<a class="reference external" href="http://muraoka-edo.hatenablog.com/entry/2015/01/18/171522">http://muraoka-edo.hatenablog.com/entry/2015/01/18/171522</a>)</p>
-<p>・sphinx_rtd_theme をカスタマイズする (<a class="reference external" href="http://kuttsun.blogspot.com/2016/11/sphinx-sphinxrtdtheme.html">http://kuttsun.blogspot.com/2016/11/sphinx-sphinxrtdtheme.html</a>)</p>
-<p>・blockdiag (<a class="reference external" href="http://blockdiag.com/ja/blockdiag/introduction.html">http://blockdiag.com/ja/blockdiag/introduction.html</a>)</p>
-<p>・GitHub Pagesで自分の作ったサイトを公開する (<a class="reference external" href="https://qiita.com/nagisa88/items/91c4f57c784842f365d7">https://qiita.com/nagisa88/items/91c4f57c784842f365d7</a>)</p>
+<h2>1. Golangのインストール<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>まずはgoをインスコ</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install go
+</pre></div>
+</div>
+<p>GOのRoot Pathを$HOME/devに変更し、そのPATHを通す。デフォルトのgo rootは”go env GOROOT”で確認可能。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GOPATH</span><span class="o">=</span><span class="nv">$HOME</span>/dev
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$GOPATH</span>/bin
+</pre></div>
+</div>
+<p>go getでgoreをインストールする。オプション-uで最新をダウンロードする。
+また、オプション-uですでにローカルにインストール済みであっても再度インストールが可能。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>go get -u github.com/motemen/gore/cmd/gore
+</pre></div>
+</div>
+<p>上記実施後、$GOPATHの中のbin配下を確認するとインストールされたgoreの実行形式ファイルが確認できるはず。
+これにてGOのRoot Pathが変更されてインストール先が更新さえていることがわかる。
+(デフォルトgo rootは”go env GOROOT”で取得されるPath)</p>
+<p>また、goreをインストールするとgithub上の階層と同様にsrc配下に作成される。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install tree
+tree -L <span class="m">3</span> <span class="nv">$GOPATH</span>/src
+/Users/minada/dev/src
+├── github.com
+│   ├── k0kubun
+│   │   └── pp
+│   ├── mattn
+│   │   ├── go-colorable
+│   │   ├── go-isatty
+│   │   └── go-runewidth
+│   ├── mitchellh
+│   │   └── go-homedir
+│   ├── motemen
+│   │   ├── go-quickfix
+│   │   └── gore
+│   ├── nsf
+│   │   └── gocode
+│   └── peterh
+│       └── liner
+└── golang.org
+    └── x
+        ├── net
+        ├── text
+        └── tools
+</pre></div>
+</div>
+</div>
+<div class="section" id="hello-world">
+<h2>2. Hello Worldを表示する<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h2>
+<p>以下の通り、goreを使用してHello Worldを表示する。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>minada$ gore -autoimport
+gore version <span class="m">0</span>.4.1  :help <span class="k">for</span> <span class="nb">help</span>
+gore&gt; fmt.Println<span class="o">(</span><span class="s2">&quot;Hello World&quot;</span><span class="o">)</span>
+Hello World
+<span class="m">12</span>
+nil
+</pre></div>
+</div>
+<p>コードの補完や出力のハイライト、APIドキュメントの参照を可能にする。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>go get -u github.com/nsf/gocode
+go get -u github.com/k0kubun/pp
+go get -u golang.org/x/tools/cmd/godoc
+</pre></div>
+</div>
+</div>
+<div class="section" id="ghq">
+<h2>3. ghqを使ってリポジトリの取得と管理<a class="headerlink" href="#ghq" title="Permalink to this headline">¶</a></h2>
+<p>以下のようにghqをインストールし、ソースを持ってくるディレクトリを指定する。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install ghq
+git config --global ghq.root <span class="nv">$GOPATH</span>/src
+</pre></div>
+</div>
+<p>これにて設定完了。ghq listでディレクトリ常に存在するリポジトリ一覧を取得できる。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ghq list
+github.com/k0kubun/pp
+github.com/mattn/go-colorable
+github.com/mattn/go-isatty
+github.com/mattn/go-runewidth
+github.com/mitchellh/go-homedir
+github.com/motemen/go-quickfix
+github.com/motemen/gore
+github.com/nsf/gocode
+github.com/peterh/liner
+golang.org/x/net
+golang.org/x/text
+golang.org/x/tools
+</pre></div>
+</div>
+<p>これでghq get <a class="reference external" href="https://github.com/">https://github.com/</a>… という風に手元にソースコードを取得し、
+リボジトリ管理を簡単にできるようになった。</p>
+</div>
+<div class="section" id="zshpeco">
+<h2>4. zshを導入し、pecoでリポジトリ間の移動<a class="headerlink" href="#zshpeco" title="Permalink to this headline">¶</a></h2>
+<p>まず、リポジトリ移動に便利なpecoの導入です。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install peco
+</pre></div>
+</div>
+<p>以下の通り、zshを導入する。インストールした後、使用できるシェルに”/usr/local/bin/zsh”を追加する(/etc/shellsの最終行に追加)。
+最後にログインシェルを変更する。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install zsh
+sudo vi /etc/shells
+chsh -s /usr/local/bin/zsh
+</pre></div>
+</div>
+<p>上記を終えたら起動しているターミナルアプリケーションを閉じてMacデフォルトのターミナルを起動する。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--- Type one of the keys in parentheses ---
+</pre></div>
+</div>
+<p>と表示されているかと思うので、returnキーを押下する。そして以下のようにzshが動作していることを確認する。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>% <span class="nb">echo</span> <span class="nv">$SHELL</span>
+/usr/local/bin/zsh
+</pre></div>
+</div>
+<p>次に.zshrcを編集し、カスタマイズを行う。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vi ~/.zshrc
+<span class="nb">source</span> ~/.zshrc
+</pre></div>
+</div>
+<p>以下の設定を追加。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configuration for peco and golang</span>
+bindkey <span class="s1">&#39;^]&#39;</span> peco-src
+
+<span class="k">function</span> peco-src<span class="o">()</span>
+<span class="o">{</span>
+        <span class="nb">local</span> <span class="nv">src</span><span class="o">=</span><span class="k">$(</span>ghq list --full-path <span class="p">|</span> peco --query <span class="s2">&quot;</span><span class="nv">$LBUFFER</span><span class="s2">&quot;</span><span class="k">)</span>
+        <span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;src&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+                <span class="nv">BUFFER</span><span class="o">=</span><span class="s2">&quot;cd </span><span class="nv">$src</span><span class="s2">&quot;</span>
+                zle accept-line
+        <span class="k">fi</span>
+        zle -R -c
+<span class="o">}</span>
+zle -N peco-src
+</pre></div>
+</div>
+<p>上記設定変更と実施の後、ターミナル上で”control+]”を押下することでpecoのUIを表示できる。
+試しに”motemen”と入力し、Enterしてみると、選択されたプロジェクトリポジトリに移動することができる。
+これでgo getまたはghq getで取得したリポジトリに自由に移動できるようになった。</p>
+</div>
+<div class="section" id="id10">
+<h2>5. エディタと開発環境<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h3>エディター<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>みんなのGO(書籍)曰く、GOはコマンドラインツール作成にも向いているのでターミナル上での開発を勧めているらしい。
+なのでvim-goというプライグインを使ったvimをエディタとして用いることにする。手順は基本的に`vim-go チュートリアル &lt;<a class="reference external" href="https://github.com/hnakamur/vim-go-tutorial-ja">https://github.com/hnakamur/vim-go-tutorial-ja</a>&gt;`_
+に従うことにする。vim-goを使うにはNeoBundleを設定する必要があるらしい。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install vim
+mkdir -p ~/.vim/bundle
+git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh &gt; install.sh
+sh ./install.sh
+rm -rf install.sh
+go get github.com/fatih/vim-go-tutorial
+vi ~/.vimrc
+</pre></div>
+</div>
+<p>~/.vimrcは以下のように記述しておく。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>call plug#begin<span class="o">()</span>
+Plug <span class="s1">&#39;fatih/vim-go&#39;</span>, <span class="o">{</span> <span class="s1">&#39;do&#39;</span>: <span class="s1">&#39;:GoInstallBinaries&#39;</span> <span class="o">}</span>
+call plug#end<span class="o">()</span>
+</pre></div>
+</div>
+<p>インストール時には含まれていない有用なコマンドラインツール群があるのでまとめてインスコする。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>go get golang.org/x/tools/cmd/..
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>コードフォーマッター<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>コードフォーマッターはインデントや改行位置、変数の整列などを自動調整してくれる。
+Goは標準でgofmtというコードフォーマッターが準備されている。main.goをフォーマットする場合は・・。
+オプションwで対象のファイルを直接書き換えることが可能。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gofmt -w main.go
+</pre></div>
+</div>
+<p>gofmtの上位互換としてgoimportsがある。あとで説明する。</p>
+</div>
+<div class="section" id="id13">
+<h3>静的解析ツール<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>Goは標準でlingツールがついてくる。lintツールはコードの静的解析を行い、
+バグが発生しそうな部分やスタイルが不揃いな店やGoっぽくない書き方などを指摘してくれる。</p>
+<ul class="simple">
+<li>go vet … バグになりそうな箇所を特定 (標準で同梱)</li>
+<li>golint … Goらしくないコーディングスタイルを警告</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>go get github.com/golang/lint/golint
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>ドキュメント閲覧ツール<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>go doc … 標準のドキュメント閲覧コマンド</li>
+<li>godoc … より強力なドキュメント閲覧コマンド</li>
+</ul>
+<p>以下のようにインストールし、fmtのドキュメント閲覧してみる。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>go get golang.org/x/tools/cmd/godoc
+godoc fmt
+</pre></div>
+</div>
+<p>$GOPATH以下のパッケージにすばらくアクセスすることも可能。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>godoc <span class="k">$(</span>ghq list <span class="p">|</span> peco<span class="k">)</span> <span class="p">|</span> less
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>その他のツール<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>gorename … 変数名や関数名をリネーム</li>
+<li>guru … ソースコードの静的解析</li>
+<li>gocode … コード補完用のエンジンを提供</li>
+<li>godef … 定義ジャンプのためのツール</li>
+<li>gotag … ctags五感のタグを生成してくれるツール</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id16">
+<h2>6. Goをはじめる<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id17">
+<h3>チュートリアル<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>A Tour of Goというチュートリアルは初心者に必須らしい。</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>go get github.com/atotto/go-tour-jp/gotour
+gotour
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="https://tour.golang.org">https://tour.golang.org</a> (英語版)</li>
+<li><a class="reference external" href="https://go-tour-jp.appspot.com">https://go-tour-jp.appspot.com</a> (日本語版)</li>
+<li><a class="reference external" href="https://golang.org/doc">https://golang.org/doc</a> (公式ドキュメント)</li>
+</ul>
+</div>
+<div class="section" id="a-tour-of-gogo">
+<h3>A Tour of Goで学ぶGoコードの基本<a class="headerlink" href="#a-tour-of-gogo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>プログラムはpackageで構成される</li>
+<li>プログラムはmainパッケージから開始される</li>
+<li>importでパッケージを読み込む</li>
+<li>factoredインポートステートメントでimportをグループ化可能</li>
+<li>変数名の後ろに型名を書く</li>
+<li>x int, y int は x, y int とも書ける</li>
+<li>関数の戻り値は複数の値を設定できる</li>
+</ul>
+<div class="highlight-Go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nx">swap</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">x</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>戻り値に名前をつけることが可能。</li>
+</ul>
+<div class="highlight-Go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nx">split</span><span class="p">(</span><span class="nx">sum</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">x</span> <span class="p">=</span> <span class="nx">sum</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">9</span>
+   <span class="nx">y</span> <span class="p">=</span> <span class="nx">sum</span> <span class="o">-</span> <span class="nx">x</span>
+   <span class="k">return</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>var … 複数の変数の最後に型を書くことで、変数のリストを宣言</li>
+<li>初期化子が与えられている場合、型を省略可能 (bool c = true, bool python = false, java = “no!”　と以下は同様)</li>
+</ul>
+<div class="highlight-Go notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">python</span><span class="p">,</span> <span class="nx">java</span> <span class="p">=</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s">&quot;no!&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>“:=” の代入文を使うと暗黙的な型宣言が可能。</li>
+<li>byte // uint8 の別名, rune // int32 の別名</li>
+<li>変数 v 、型 T があった場合、 T(v) は、変数 v を T 型へ変換</li>
+</ul>
+<div class="highlight-Go notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">i</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">42</span>
+<span class="kd">var</span> <span class="nx">f</span> <span class="kt">float64</span> <span class="p">=</span> <span class="nb">float64</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">u</span> <span class="kt">uint</span> <span class="p">=</span> <span class="nb">uint</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>さらにシンプルにもできる</li>
+</ul>
+<div class="highlight-Go notranslate"><div class="highlight"><pre><span></span><span class="nx">i</span> <span class="o">:=</span> <span class="mi">42</span>
+<span class="nx">f</span> <span class="o">:=</span> <span class="nb">float64</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<span class="nx">u</span> <span class="o">:=</span> <span class="nb">uint</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>型推論</li>
+</ul>
+<div class="highlight-Go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nx">v</span> <span class="o">:=</span> <span class="mi">42</span> <span class="c1">// change me!</span>
+   <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;v is of type %T\n&quot;</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>v is of <span class="nb">type</span> int
+</pre></div>
+</div>
+<ul class="simple">
+<li>定数( constant )は、 const キーワードを使って変数と同じように宣言</li>
+</ul>
+<div class="highlight-Go notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">World</span> <span class="p">=</span> <span class="s">&quot;世界&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id18">
+<h2>6. Golangプロジェクトを始める<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id19">
+<h3>プロジェクトを作るまたは読み込み前の基礎的注意点<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>mainパッケージを除き、プロジェクトのディレクトリ名はソースコード内に記述されるパッケージ名と同一であることを推奨。</li>
+</ul>
+</div>
+<div class="section" id="id20">
+<h3>テキトーなプロジェクトを読み込んでみる<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://studio-andy.hatenablog.com/entry/go-todo-crud">テキトーなCRUDアプリのコード</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ghq get https://github.com/andoshin11/go-todo-example
+</pre></div>
+</div>
+<p>Control+]によるpecoでインスコしたリポジトリに移動し、tree表示してみる。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>% tree -L <span class="m">3</span> <span class="nv">$GOPATH</span>/src/github.com/andoshin11/go-todo-example
+/Users/minada/dev/src/github.com/andoshin11/go-todo-example
+├── Gopkg.lock
+├── Gopkg.toml
+├── README.md
+├── db
+│   ├── dbconf_clone.yml
+│   ├── migrations
+│   │   ├── 20180415220424_createTask.sql
+│   │   └── 20180416000712_autoIncrementTask.sql
+│   └── xo
+│       └── templates
+├── main.go
+└── src
+    ├── controller
+    │   ├── index.go
+    │   └── task.go
+    └── model
+        ├── model.go
+        ├── task.xo.go
+        └── xo_db.xo.go
+</pre></div>
+</div>
+</div>
+<div class="section" id="vendoringglide">
+<h3>依存管理 (vendoringとglide)<a class="headerlink" href="#vendoringglide" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>依存管理とは・・サードパーティのパッケージを使う場合のバージョンの固定などの面倒を見てくれる依存管理の仕組み。</li>
+<li>vendoring…標準の個別依存管理の機能。vendor/配下にパッケージを置いておけばGOROOTやGOPATHよりも優先してそっちを参照する機能。</li>
+<li>glide…vendoringを管理するためのサードパーティ</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install glide
+go get github.com/Masterminds/glide
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id21">
+<h2>その他,補足<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>IDEにIntelliJ IDEAとかもオススメらしい (<a class="reference external" href="https://qiita.com/syu_chan_1005/items/46f94412f7493d6e60eb">https://qiita.com/syu_chan_1005/items/46f94412f7493d6e60eb</a>)</li>
+</ul>
+</div>
+<div class="section" id="id22">
+<h2>用いた専門用語たち<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>タスクランナー…Webサイト構築に必要な処理をタスクとして自動化してくれるプログラム。</li>
+<li>垂直スケーラビリティ・・・CPUを増やして処理能力を向上する手法</li>
+<li>水平スケーラビリティ・・・マシンの台数を増やして処理能力を向上する手法</li>
+<li>URI (Uniform Resource Indentifier)・・・Internet上でのリソース位置を文字列で表現。一般型 - &lt;スキーム名&gt;:&lt;階層部&gt;[?&lt;クエリ&gt;][#&lt;フラグメント&gt;]</li>
+</ul>
+</div>
+<div class="section" id="id23">
+<h2>引用した資料たち<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>みんなのGO言語 - 現場で使える実践テクニック (株式会社技術評論社)</li>
+<li>GOプログラミング実践入門 (Sau Sheong Chang著)</li>
+<li>初心者向け：Zshの導入 (<a class="reference external" href="https://qiita.com/iwaseasahi/items/a2b00b65ebd06785b443">https://qiita.com/iwaseasahi/items/a2b00b65ebd06785b443</a>)</li>
+<li>初心者向け vimrcの設定方法 (<a class="reference external" href="https://qiita.com/iwaseasahi/items/0b2da68269397906c14c">https://qiita.com/iwaseasahi/items/0b2da68269397906c14c</a>)</li>
+<li>vim-goを使うなら使用したいコマンド集と設定 (<a class="reference external" href="https://qiita.com/gorilla0513/items/a027885d03af0d6d5863">https://qiita.com/gorilla0513/items/a027885d03af0d6d5863</a>)</li>
+<li>$GOPATH/bin にバイナリファイルができなかった (<a class="reference external" href="https://qiita.com/nagata03/items/cec2587140a376e345a9">https://qiita.com/nagata03/items/cec2587140a376e345a9</a>)</li>
+<li>hnakamur/vim-go-tutorial-ja (<a class="reference external" href="https://github.com/hnakamur/vim-go-tutorial-ja">https://github.com/hnakamur/vim-go-tutorial-ja</a>)</li>
+<li>【Golang】vim-goをインストールしてみた (<a class="reference external" href="https://o21o21.hatenablog.jp/entry/vim-go">https://o21o21.hatenablog.jp/entry/vim-go</a>)</li>
+</ul>
+<a class="reference internal image-reference" href="_images/GitHub3.png"><img alt="_images/GitHub3.png" class="align-center" src="_images/GitHub3.png" style="width: 557.0px; height: 544.0px;" /></a>
 </div>
 </div>
 
@@ -373,7 +684,7 @@ Eclipseのインストールして初期設定までは行おう⇒手順リン�
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="index.html" class="btn btn-neutral" title="Welcome to DocSphinxHowTo’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to GoLang’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -382,7 +693,7 @@ Eclipseのインストールして初期設定までは行おう⇒手順リン�
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Mark.
+        &copy; Copyright 2018, Mark
 
     </p>
   </div>
@@ -399,32 +710,16 @@ Eclipseのインストールして初期設定までは行おう⇒手順リン�
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
