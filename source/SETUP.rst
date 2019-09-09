@@ -20,7 +20,7 @@ MacOS Mojave環境で実施。事前にHomebrewはインスコしておこう。
 
    blockdiag
    {
-      開発環境構築 -> Sphinxインスコ -> Eclipseインスコ -> Eclipse設定 -> Document作成;
+      GO言語の基礎を学ぶ -> 開発環境構築 -> GOやってみる -> アプリ制作 -> デプロイ;
    }
 
 
@@ -285,6 +285,8 @@ go getでgoreをインストールする。オプション-uで最新をダウ�
 .. code-block:: bash
 
    brew install vim
+   curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   git clone https://github.com/fatih/vim-go.git ~/.vim/plugged/vim-go
    mkdir -p ~/.vim/bundle
    git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
    curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
